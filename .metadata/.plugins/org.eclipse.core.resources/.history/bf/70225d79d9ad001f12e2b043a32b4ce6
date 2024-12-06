@@ -1,0 +1,12 @@
+package tutorial;
+
+public class Calculadora {
+
+	public static void main(String[] args) {
+		int soma = 2 + 2;
+		soma = 4 + 3;
+		System.out.println(soma);
+
+	}
+
+}

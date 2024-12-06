@@ -1,0 +1,25 @@
+package zoologico;
+
+public class Gato {
+	String cor;
+	String raca;
+	double peso;
+	
+	public void emitirSom() {
+		if (peso < 3) {
+		System.out.println("Miau!");
+		} else if (peso >= 3 && peso < 5 ){
+			System.out.println("Miaaau!");
+			} else {
+				System.out.println("Miau! Miau!");
+		}
+	} //The method emitirSom possesses different conditionals depending on the number inserted in the variable "peso".
+	
+	public void brincar() {
+		System.out.println("brincando...");
+	}
+	
+	public void saltar() {
+		System.out.println("saltando...");
+	}
+}

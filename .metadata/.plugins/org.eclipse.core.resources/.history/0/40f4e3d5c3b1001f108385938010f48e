@@ -1,0 +1,16 @@
+package zoologico;
+
+public class App {
+
+	public static void main(String[] args) {
+		Gato gato = new Gato();
+		
+		gato.cor = "Branco";
+		gato.raca = "Vira lata";
+		gato.peso = 2;
+		gato.saltar();
+		gato.emitirSom();
+
+	}
+
+}

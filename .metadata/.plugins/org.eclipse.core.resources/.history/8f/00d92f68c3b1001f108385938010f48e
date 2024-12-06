@@ -1,0 +1,19 @@
+package zoologico;
+
+public class Gato {
+	String cor;
+	String raca;
+	double peso;
+	
+	public void emitirSom() {
+		System.out.println("Miau!");
+	}
+	
+	public void brincar() {
+		System.out.println("brincando...");
+	}
+	
+	public void saltar() {
+		System.out.println("saltando...");
+	}
+}

@@ -1,7 +1,8 @@
 Git commands:
 
 //To create a repository, first right click on your local folder and open GIT BASH, then:
-git init
+git init //USED ONLY TO START A REPOSITORY.
+
 git add . 
 git commit -m "Comment"
 git remote add origin https://github.com/Pehfos/"siteUrlHere".git

@@ -13,3 +13,4 @@ git status //Checks the status of your repository.
 
 .gitignore //Is a .txt file created inside of your repository, it is used to exclude things 
 you wish to push into your repository.
+//Java example for .gitignore: https://gist.github.com/dedunumax/54e82214715e35439227

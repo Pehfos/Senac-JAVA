@@ -2,12 +2,11 @@ Git commands:
 
 //To create a repository, first right click on your local folder and open GIT BASH, then:
 git init //USED ONLY TO START A REPOSITORY.
-
-git add . 
-git commit -m "Comment"
-git remote add origin https://github.com/Pehfos/"siteUrlHere".git
-git branch -M main
-git push -u origin main
+git add . //Used to add changes.
+git commit -m "Comment" //Used to confirm changes.
+git remote add origin https://github.com/Pehfos/"siteUrlHere".git //Used to add the remote repository.
+git branch -M main //Changes the name of the branch.
+git push -u origin main //Pushes your changes into the remote repository.
 
 //Separate commands:
 git status //Checks the status of your repository.

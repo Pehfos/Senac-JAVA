@@ -1,6 +1,3 @@
-Criar uma classe que represente on objeto "Travesseiro", criar classe App e fazer essa classe funcionar, todos seu métodos
-e atributos, instanciar na classe app. 
-
 Git commands:
 
 git init

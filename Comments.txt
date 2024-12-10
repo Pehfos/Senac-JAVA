@@ -1,33 +1,16 @@
-private double peso;
-
-	public double getPeso() {
-		return peso;
-	}
-
-	public void setPeso(double peso) {
-		if(peso < 0) {
-			this.peso = 1;
-			System.out.println("O valor foi alterado para 1 pois você passou um valor inválido.");
-		} else {
-		this.peso = peso;
-		}
-	}
-
-	public void emitirSom() {
-		if (peso <= 3) {
-		System.out.println("Miau!");
-		} else if (peso > 3 && peso <= 5 ){
-			System.out.println("Miaaau!");
-			} else {
-				System.out.println("Miau! Miau!");
-		}
-	} 			
-	
-Criar uma classe que represente on objeto "Travesseiro", criar classe App e fazer essa classe funcionar, todos seu métodos
-e atributos, instanciar na classe app. 
-
 Git commands:
 
+//To create a repository, first right click on your local folder and open GIT BASH, then:
 git init
 git add . 
 git commit -m "Comment"
+git remote add origin https://github.com/Pehfos/"siteUrlHere".git
+git branch -M main
+git push -u origin main
+
+//Separate commands:
+git status //Checks the status of your repository.
+
+.gitignore //Is a .txt file created inside of your repository, it is used to exclude things 
+you wish to push into your repository.
+//Java example for .gitignore: https://gist.github.com/dedunumax/54e82214715e35439227

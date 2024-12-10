@@ -1,8 +1,15 @@
 Git commands:
 
+//To create a repository, first right click on your local folder and open GIT BASH, then:
 git init
 git add . 
 git commit -m "Comment"
 git remote add origin https://github.com/Pehfos/"siteUrlHere".git
 git branch -M main
 git push -u origin main
+
+//Separate commands:
+git status //Checks the status of your repository.
+
+.gitignore //Is a .txt file created inside of your repository, it is used to exclude things 
+you wish to push into your repository.

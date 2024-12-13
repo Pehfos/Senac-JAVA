@@ -1,0 +1,1 @@
+INSERT INTO aluno(aluno, genero, idade, matricula, email) VALUES('Mauro', 'Homen Cis', 40, '12345', 'mauro@hotmail.com');

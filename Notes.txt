@@ -41,7 +41,7 @@ INT //Whole numbers.
 DECIMAL(p,s) #p meaning the max numbers that can be written, usually 18. 
 	s meaning the numbers that can be writter after the ,
 	//Same thing as double/float.
-PRIMARY KEY //Selects an attribute to be unique, usually ones that are specific to a data type like email.
+PRIMARY KEY //Selects an attribute to be unique, preferably of the INT data type.
 USE databaseNameHere //Command to use a specific database.
 SELECT //Chooses a table to view things in. The character * means all attributes in there.
 	WHERE //Searches for a specific attribute in a table. Can be given a wider range with OR, AND and LIKE.
@@ -50,3 +50,5 @@ INSERT INTO //Inserts attributes into a table. VARCHAR values must be written in
 VALUES //Used after INSERT INTO to put the values you want inside that table corresponding to their attributes.
 NOT NULL //Mandatory field.
 DEFAULT '  ' //Returns an information if the field is not filled.
+MODIFY //Modifies a column into a different data type.
+AUTO_INCREMENT //Adds +1 to the DB register, often of a PRIMARY KEY.

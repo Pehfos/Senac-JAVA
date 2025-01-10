@@ -8,7 +8,7 @@ git add . //Used to add changes.
 git commit -m "Comment" //Used to confirm changes.
 git remote add origin https://github.com/Pehfos/"siteUrlHere".git //Used to add the remote repository.
 git branch -M main //Changes the name of the branch.
-git push -u origin main //Pushes your changes into the remote repository.
+git push -u origin main //Pushes your changes into the remote repository, subsequent uses only require <git push>.
 
 //Separate commands:
 git status //Checks the status of your repository.
@@ -20,28 +20,37 @@ git status //Checks the status of your repository.
 #######################################################################################################
 
 Database:
-
+ **STUDY ANSI SQL**
 SQL commands are usually written in ALL CAPS.
 
 localhost = 127.0.0.1
 
 DDL (Data Definition Language)
 - CREATE DATABASE name //To create a database.
-- ALTER
-- DROP
+- ALTER TABLE //Adds or modifies a table.
+- DROP TABLE //Deletes a table.
 - RENAME
-- TRUNCATE //Deletes everything
+- DELETE //Deletes a column from a table, MUST BE USED WITH WHERE on the PRIMARY KEY.
+- MODIFY //Modifies a column into a different data type.
+- TRUNCATE TABLE //Deletes the information from a table without deleting it.
 
-CHAR/VARCHAR(number range) //Same thing as Strings.
+CHAR/VARCHAR(number range) //Same thing as <Strings>.
 DATE //Sets the date.
 DATETIME //Sets the date and the time.
 INT //Whole numbers.
-DECIMAL(p,s) #p meaning the max numbers that can be written, usually 18. 
+DECIMAL(p,s) //p meaning the max numbers that can be written, usually 18. 
 	s meaning the numbers that can be writter after the ,
-	//Same thing as double/float.
-PRIMARY KEY //Selects an attribute to be unique, usually ones that are specific to a data type like email.
+	//Same thing as <double>/<float>.
+PRIMARY KEY //Selects an attribute to be unique, preferably of the <INT> data type.
+AUTO_INCREMENT //Adds +1 to the DB register automatically, usually of a <PRIMARY KEY>.
+NOT NULL //Mandatory field.
+DEFAULT '  ' //Returns an information if the field is not filled.
+
 USE databaseNameHere //Command to use a specific database.
 SELECT //Chooses a table to view things in. The character * means all attributes in there.
+WHERE //Limits a specific condition after another command. Can be given a wider range with <OR>, <AND> and <LIKE>.
 FROM //Specifies the name of the table.
-INSERT INTO //Inserts attributes into a table. VARCHAR values must be written inside ' '.
-VALUES //Used after INSERT INTO to put the values you want inside that table corresponding to their attributes.
+INSERT INTO //Inserts attributes into a table. <VARCHAR> values must be written inside ' '.
+VALUES //Used after <INSERT INTO> to put the values you want inside that table corresponding to their attributes.
+SET //Sets the information of a column to something else.
+UPDATE //Used together with SET and WHERE to change the information from a column.

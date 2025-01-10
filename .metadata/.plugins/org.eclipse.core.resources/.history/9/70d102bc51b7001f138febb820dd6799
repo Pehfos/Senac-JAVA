@@ -1,9 +1,0 @@
-package tutorial;
-
-public class Decisao {
-
-	public static void main(String[] args) {
-
-	}
-
-}

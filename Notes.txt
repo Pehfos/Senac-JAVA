@@ -1,5 +1,10 @@
+Java:
+
+
+
 For numbers that you won't be doing math equations to, use Strings/varchar.
 
+#######################################################################################################
 Git commands:
 
 //To create a repository, first right click on your local folder and open GIT BASH, then:
@@ -19,7 +24,7 @@ git status //Checks the status of your repository.
 
 #######################################################################################################
 
-Database:
+Database MySQL:
  **STUDY ANSI SQL**
 SQL commands are usually written in ALL CAPS.
 

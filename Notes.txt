@@ -49,7 +49,7 @@ DECIMAL(p,s) //p meaning the max numbers that can be written, usually 18.
 PRIMARY KEY //Selects an attribute to be unique, preferably of the <INT> data type.
 AUTO_INCREMENT //Adds +1 to the DB register automatically, usually of a <PRIMARY KEY>.
 NOT NULL //Mandatory field.
-DEFAULT '  ' //Returns an information if the field is not filled.
+DEFAULT //Returns default information if the field is not filled.
 
 USE databaseNameHere //Command to use a specific database.
 SELECT //Chooses a table to view things in. The character * means all attributes in there.

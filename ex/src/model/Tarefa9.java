@@ -1,6 +1,6 @@
 package model;
 
-public class Tarefa {
+public class Tarefa9 {
 	private int id;
 	private String descricao;
 	private int prazo;

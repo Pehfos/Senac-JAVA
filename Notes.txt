@@ -1,6 +1,9 @@
 Java:
 
-
+Java Layers for DB:
+Model \\Represents the tables.
+View \\ Views the projects.
+Controller \\Controls the projects.
 
 For numbers that you won't be doing math equations to, use Strings/varchar.
 
@@ -59,3 +62,5 @@ INSERT INTO //Inserts attributes into a table. <VARCHAR> values must be written 
 VALUES //Used after <INSERT INTO> to put the values you want inside that table corresponding to their attributes.
 SET //Sets the information of a column to something else.
 UPDATE //Used together with SET and WHERE to change the information from a column.
+
+Colocar 10 tarefas na aplicação e lista-las.

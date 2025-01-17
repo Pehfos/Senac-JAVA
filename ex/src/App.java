@@ -1,38 +1,19 @@
 import model.Tarefa;
-import model.Tarefa2;
-import model.Tarefa3;
-import model.Tarefa4;
-import model.Tarefa5;
-import model.Tarefa6;
-import model.Tarefa7;
-import model.Tarefa8;
-import model.Tarefa9;
-import model.Tarefa10;
 
 public class App {
 
 	public static void main(String[] args) {
-		Tarefa tarefa = new Tarefa();
-		Tarefa2 tarefa2 = new Tarefa2();
-		Tarefa3 tarefa3 = new Tarefa3();
-		Tarefa4 tarefa4 = new Tarefa4();
-		Tarefa5 tarefa5 = new Tarefa5();
-		Tarefa6 tarefa6 = new Tarefa6();
-		Tarefa7 tarefa7 = new Tarefa7();
-		Tarefa8 tarefa8 = new Tarefa8();
-		Tarefa9 tarefa9 = new Tarefa9();
-		Tarefa10 tarefa10 = new Tarefa10();
-				
-		tarefa.setId(1);
-		tarefa.setDescricao("Entregar guitarra para João");
-		tarefa.setPrazo(10);
-		tarefa.setFinalizada(false);
-		
-		tarefa2.setId(2);
-		tarefa2.setDescricao("Devolver cadeira de Emerson");
-		tarefa2.setPrazo(7);
-		tarefa2.setFinalizada(false);
-
+		Tarefa tarefa = new Tarefa(1, "Entregar guitarra para João", 1, false);
+		Tarefa tarefa2 = new Tarefa(2, "Devolver cadeira de Emerson", 7);
+		Tarefa tarefa3 = new Tarefa();
+		Tarefa tarefa4 = new Tarefa();
+		Tarefa tarefa5 = new Tarefa();
+		Tarefa tarefa6 = new Tarefa();
+		Tarefa tarefa7 = new Tarefa();
+		Tarefa tarefa8 = new Tarefa();
+		Tarefa tarefa9 = new Tarefa();
+		Tarefa tarefa10 = new Tarefa();
+					
 		tarefa3.setId(3);
 		tarefa3.setDescricao("Depositar dinheiro");
 		tarefa3.setPrazo(6);
@@ -72,6 +53,8 @@ public class App {
 		tarefa10.setDescricao("Jogar materiais fora");
 		tarefa10.setPrazo(30);
 		tarefa10.setFinalizada(false);
+		
+		System.out.println(tarefa);
 		
 		System.out.println(tarefa.getId() + ", " + tarefa.getDescricao() + ", " + tarefa.getPrazo() + ", " + tarefa.isFinalizada());
 		System.out.println(tarefa2.getId() + ", " + tarefa2.getDescricao() + ", " + tarefa2.getPrazo() + ", " + tarefa2.isFinalizada());

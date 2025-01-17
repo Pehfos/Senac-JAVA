@@ -1,16 +1,33 @@
 Java:
 
-Java Layers for DB:
-Model \\Represents the tables.
-View \\ Views the projects.
-Controller \\Controls the projects.
+--Conditionals
+if //Sets the condition for something. Operator being <?>.
+else if //Sets the condition for something else that already has an <if>.
+else //Returns something if no conditions are met. Operator being <:>.
 
-For numbers that you won't be doing math equations to, use Strings/varchar.
+--Instancing
+<Class> <vartype> = new <Class>() //Instantiates a private class.
+	The Constructor method creates an instance with values already put in: ...<Class>(<vartype> <varname).
+@override //Used to override a method from the Java object class.
+	toString() //Overrides the toString() method to return a specified information when printing an object.
+
+--Loop 
+for //Loops for specified number of times. for commands require: (<vartype> <varname> ; <varname> <modifier>;<varname> <+>)
+while //Loops for an unspecified number of times, evaluates something that'll result in a <true> or <false>.
+	//while commands require: (<varname> == <true> or <false>)
+do...while //Loops once and then checks if it should loop for an unspecified number of time.
+
+--Java Layers for DB:
+Model //Represents the tables.
+View // Views the projects.
+Controller //Controls the projects.
+
+--For numbers that you won't be doing math equations to, use Strings/varchar.
 
 #######################################################################################################
 Git commands:
 
-//To create a repository, first right click on your local folder and open GIT BASH, then:
+--To create a repository, first right click on your local folder and open GIT BASH, then:
 git init //USED ONLY TO START A REPOSITORY.
 git add . //Used to add changes.
 git commit -m "Comment" //Used to confirm changes.
@@ -29,18 +46,16 @@ git status //Checks the status of your repository.
 
 Database MySQL:
  **STUDY ANSI SQL**
-SQL commands are usually written in ALL CAPS.
-
-localhost = 127.0.0.1
+--SQL commands are usually written in ALL CAPS.
 
 DDL (Data Definition Language)
-- CREATE DATABASE name //To create a database.
-- ALTER TABLE //Adds or modifies a table.
-- DROP TABLE //Deletes a table.
-- RENAME
-- DELETE //Deletes a column from a table, MUST BE USED WITH WHERE on the PRIMARY KEY.
-- MODIFY //Modifies a column into a different data type.
-- TRUNCATE TABLE //Deletes the information from a table without deleting it.
+--CREATE DATABASE name //To create a database.
+--ALTER TABLE //Adds or modifies a table.
+--DROP TABLE //Deletes a table.
+--RENAME
+--DELETE //Deletes a column from a table, MUST BE USED WITH WHERE on the PRIMARY KEY.
+--MODIFY //Modifies a column into a different data type.
+--TRUNCATE TABLE //Deletes the information from a table without deleting it.
 
 CHAR/VARCHAR(number range) //Same thing as <Strings>.
 DATE //Sets the date.
@@ -54,7 +69,7 @@ AUTO_INCREMENT //Adds +1 to the DB register automatically, usually of a <PRIMARY
 NOT NULL //Mandatory field.
 DEFAULT //Returns default information if the field is not filled.
 
-USE databaseNameHere //Command to use a specific database.
+USE <databaseName> //Command to use a specific database.
 SELECT //Chooses a table to view things in. The character * means all attributes in there.
 WHERE //Limits a specific condition after another command. Can be given a wider range with <OR>, <AND> and <LIKE>.
 FROM //Specifies the name of the table.

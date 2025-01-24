@@ -1,76 +1,28 @@
 import java.util.Scanner;
 
+import controller.Controller;
+import view.Tela;
+
 public class AppTarefa {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		Tela tela = new Tela();
+		Controller controla = new Controller();
 		
-		System.out.println("----- MENU PRINCIPAL -----");
-		System.out.println("1 - Inclusão de tarefa");
-		System.out.println("2 - Consulta de tarefa");
-		System.out.println("3 - Alteração de tarefa");
-		System.out.println("4 - Exclusão de tarefa");
-		System.out.println("0 - F I M");
-		System.out.println("Digite a opçao desejada:");
-		int opcao = scanner.nextInt(); 
+		int opcao = 0; 
+		
+		do {
+			tela.exibirMenu();
 			
-		while (opcao > 0) {
-		if (opcao == 1) {
-			System.out.println("Escolhido opção 1");
-			System.out.println("----- MENU PRINCIPAL -----");
-			System.out.println("1 - Inclusão de tarefa");
-			System.out.println("2 - Consulta de tarefa");
-			System.out.println("3 - Alteração de tarefa");
-			System.out.println("4 - Exclusão de tarefa");
-			System.out.println("0 - F I M");
-			System.out.println("Digite a opçao desejada:");
 			opcao = scanner.nextInt();
-		} else if (opcao == 2){
-			System.out.println("Escolhido opção 2");
-			System.out.println("----- MENU PRINCIPAL -----");
-			System.out.println("1 - Inclusão de tarefa");
-			System.out.println("2 - Consulta de tarefa");
-			System.out.println("3 - Alteração de tarefa");
-			System.out.println("4 - Exclusão de tarefa");
-			System.out.println("0 - F I M");
-			System.out.println("Digite a opçao desejada:");
-			opcao = scanner.nextInt();
-		} else if (opcao == 3) {
-			System.out.println("Escolhido opção 3");
-			System.out.println("----- MENU PRINCIPAL -----");
-			System.out.println("1 - Inclusão de tarefa");
-			System.out.println("2 - Consulta de tarefa");
-			System.out.println("3 - Alteração de tarefa");
-			System.out.println("4 - Exclusão de tarefa");
-			System.out.println("0 - F I M");
-			System.out.println("Digite a opçao desejada:");
-			opcao = scanner.nextInt();
-		} else if (opcao == 4) {
-			System.out.println("Escolhido opção 4");
-			System.out.println("----- MENU PRINCIPAL -----");
-			System.out.println("1 - Inclusão de tarefa");
-			System.out.println("2 - Consulta de tarefa");
-			System.out.println("3 - Alteração de tarefa");
-			System.out.println("4 - Exclusão de tarefa");
-			System.out.println("0 - F I M");
-			System.out.println("Digite a opçao desejada:");
-			opcao = scanner.nextInt();
-		} else if (opcao  == 0) {
-			System.out.println("Escolhido opção 0, operação finalizada");
-		} else {
-			System.out.println("Opção invalida");
-			System.out.println("Escolhido opção 4");
-			System.out.println("----- MENU PRINCIPAL -----");
-			System.out.println("1 - Inclusão de tarefa");
-			System.out.println("2 - Consulta de tarefa");
-			System.out.println("3 - Alteração de tarefa");
-			System.out.println("4 - Exclusão de tarefa");
-			System.out.println("0 - F I M");
-			System.out.println("Digite a opçao desejada:");
-			opcao = scanner.nextInt();
-		}
 			
-		}
+			controla.verificarOpcao(opcao);
+			
+			} while (opcao != 0);
+		
+			scanner.close();	
+			
 	}
 
 }

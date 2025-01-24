@@ -77,3 +77,5 @@ INSERT INTO //Inserts attributes into a table. <VARCHAR> values must be written 
 VALUES //Used after <INSERT INTO> to put the values you want inside that table corresponding to their attributes.
 SET //Sets the information of a column to something else.
 UPDATE //Used together with SET and WHERE to change the information from a column.
+
+Trazer AppTarefa e Tela com as outras classes configuradas e Consulta para mostrar Inclusao.

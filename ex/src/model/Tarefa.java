@@ -25,6 +25,11 @@ public class Tarefa {
 		this.finalizada = false;
 	}
 	
+	public Tarefa(String descricao, int prazo, boolean finalizada) {
+		this.descricao = descricao;
+		this.prazo = prazo;
+		this.finalizada = finalizada;
+	}
 	@Override
 	public String toString() {
 		return "Tarefa [id=" + id + ", descricao=" + descricao + ", prazo=" + prazo + ", finalizada=" + finalizada

@@ -3,21 +3,21 @@ package controller;
 import view.Tela;
 
 public class Controller {
+	Tela tela = new Tela();
 	public void verificarOpcao(int opcao) {
-		Tela tela = new Tela();
 		
 		if (opcao == 1) {
 			tela.exibirInclusao();
 		} else if (opcao == 2) {
-			System.out.println("Consulta selecionada");
+			tela.exibirConsulta();
 		} else if (opcao == 3) {
-			System.out.println("Alteração selecionada");
+			tela.exibirAlteracao();
 		} else if (opcao == 4) {
-			System.out.println("Exclusão selecionada");
+			tela.exibirExclusao();
 		} else if (opcao == 0) {
-			System.out.println("Aplicação encerrada");
+			System.out.println("Aplicação encerrada.");
 		} else {
-			System.out.println("Opção digitada inválida");
+			System.out.println("Opção digitada inválida.");
 		}
 	}
 }

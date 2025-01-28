@@ -20,9 +20,7 @@ public class AppTarefa {
 			controla.verificarOpcao(opcao);
 			
 			} while (opcao != 0);
-		
-			scanner.close();	
-			
+		scanner.close();
 	}
 
 }

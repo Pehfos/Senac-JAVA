@@ -17,6 +17,22 @@ while //Loops for an unspecified number of times, evaluates something that'll re
 	//while commands require: (<varname> == <true> or <false>)
 do...while //Loops once and then checks if it should loop for an unspecified number of time.
 
+--Array
+To create an array, first begin by typing "List<vartype>" to declare the type of variables that List is receiving,
+follow it with <varname> and "= new ArrayList<vartype>()" to finalize your array method.
+
+-Array Loop
+Started by typing "for(<vartype> <varname2>: <varname>) //This loop will show everything inside of <varname>.
+	Example: List<String> example = new Arraylist<String>();
+		...
+		 for(String ex: example)
+
+--Debug
+Double click on the line left of the number to select up until where you want the debug to run.
+F5 //Enters the line.
+F6 //Goes to the next line.
+F8 //Continues the program.
+
 --Java Layers for DB:
 Model //Represents the tables.
 View // Views the projects.
@@ -45,7 +61,7 @@ git status //Checks the status of your repository.
 #######################################################################################################
 
 Database MySQL:
- **STUDY ANSI SQL**
+ ANSI SQL is the basic SQL language
 --SQL commands are usually written in ALL CAPS.
 
 DDL (Data Definition Language)
@@ -77,5 +93,3 @@ INSERT INTO //Inserts attributes into a table. <VARCHAR> values must be written 
 VALUES //Used after <INSERT INTO> to put the values you want inside that table corresponding to their attributes.
 SET //Sets the information of a column to something else.
 UPDATE //Used together with SET and WHERE to change the information from a column.
-
-Trazer AppTarefa e Tela com as outras classes configuradas e Consulta para mostrar Inclusao.

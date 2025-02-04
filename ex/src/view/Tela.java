@@ -1,5 +1,7 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import model.Tarefa;
@@ -15,27 +17,32 @@ public class Tela {
 		System.out.println("Digite a opçao desejada:");
 	}
 	
+
+	
 	public Tarefa exibirInclusao() {
 		Scanner teclado = new Scanner(System.in);
 		Tarefa tarefa = new Tarefa();
+		List<Tarefa> tarefas = new ArrayList<>();
 		
 		System.out.println("I N C L U S Ã O");
 		System.out.println("Descrição: ");
 		tarefa.setDescricao(teclado.nextLine()); 
-		System.out.println("Prazo: ");
-		tarefa.setPrazo(teclado.nextInt());
-		System.out.println("Finalizada (S/N)? ");
-		String status = teclado.next();
-		
-		if(status.equals("S") || status.equals("s")) {
-			tarefa.setFinalizada(true);
-		} else if(status.equals("N") || status.equals("n")) {
-			tarefa.setFinalizada(false);
-		} else {
-			System.out.println("Digite S ou N");
-		} 
-		
+        System.out.println("Prazo: ");
+        tarefa.setPrazo(teclado.nextInt());
+        System.out.println("Finalizada (S/N)? ");
+        String status = teclado.next();
+        
+        if(status.equals("S") || status.equals("s")) {
+            tarefa.setFinalizada(true);
+        } else if(status.equals("N") || status.equals("n")) {
+            tarefa.setFinalizada(false);
+        } else {
+            System.out.println("Digite S ou N");
+        }
+	
+		tarefas.add(tarefa);
 		return tarefa;
+		
 	}
 	
 	public void exibirConsulta(Tarefa tarefa) { 

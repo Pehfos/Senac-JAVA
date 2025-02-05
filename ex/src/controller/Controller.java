@@ -1,25 +1,59 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.Tarefa;
 import view.Tela;
 
 public class Controller {
+	List<Tarefa> tarefas = new ArrayList<>();
 	Tarefa tarefa;
+	
 	public void verificarOpcao(int opcao) {
 		Tela tela = new Tela();
 		
 		if (opcao == 1) {
-			tarefa = tela.exibirInclusao();
+			tarefa = tela.exibirInclusao(gerarIndice(tarefas));
+			tarefas.add(tarefa);
 		} else if (opcao == 2) {
-			tela.exibirConsulta(tarefa);
+			tela.exibirTarefa(tarefas);
 		} else if (opcao == 3) {
 			tarefa = tela.exibirAlteracao(tarefa);
 		} else if (opcao == 4) {
-			tarefa = tela.exibirExclusao(tarefa);
+			tarefas = tela.exibirExclusao(tarefas);
+		} else if(opcao == 9) {
+			tarefas = gerarDadosDeTeste();
 		} else if (opcao == 0) {
 			System.out.println("Aplicação encerrada.");
 		} else {
 			System.out.println("Opção digitada inválida.");
 		}
+	}
+	
+	public int gerarIndice(List<Tarefa> lista) {
+		int retorno;
+		
+		if(lista.isEmpty()) {
+			retorno = 1;
+		} else {
+			retorno = lista.size() + 1;
+ 		}
+		
+		return retorno;
+	}
+	
+	public List<Tarefa> gerarDadosDeTeste(){
+		List<Tarefa> lista = new ArrayList<>();
+		
+		for(int i = 0; i < 5; i++) {
+			Tarefa tarefa = new Tarefa();
+			tarefa.setId(i);
+			tarefa.setDescricao("Comprar algo " + i);
+			tarefa.setPrazo(i);
+			tarefa.setFinalizada(false);
+			
+			lista.add(tarefa);
+		}
+		return lista;
 	}
 }

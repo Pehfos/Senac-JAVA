@@ -18,7 +18,7 @@ public class Controller {
 		} else if (opcao == 2) {
 			tela.exibirTarefa(tarefas);
 		} else if (opcao == 3) {
-			tarefa = tela.exibirAlteracao(tarefa);
+			tarefas = tela.exibirAlteracao(tarefas);
 		} else if (opcao == 4) {
 			tarefas = tela.exibirExclusao(tarefas);
 		} else if(opcao == 9) {
@@ -55,5 +55,6 @@ public class Controller {
 			lista.add(tarefa);
 		}
 		return lista;
+	
 	}
 }

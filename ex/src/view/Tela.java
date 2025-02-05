@@ -1,5 +1,6 @@
 package view;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import model.Tarefa;
@@ -47,24 +48,69 @@ public class Tela {
 		}
 	}
 	
-	public Tarefa exibirAlteracao(Tarefa tarefa) {
+	public List<Tarefa> exibirAlteracao(List<Tarefa> tarefas) {
 		Scanner teclado = new Scanner(System.in);
+		Scanner teclado2 = new Scanner(System.in);
 
 		System.out.println("A L T E R A Ç Ã O");
-		System.out.println("Descrição : ");
-		tarefa.setDescricao(teclado.nextLine());
-		System.out.println("Prazo : ");
-		tarefa.setPrazo(teclado.nextInt());
-		System.out.println("Finalizada (S/N)? ");
-		String status = teclado.next();
+		for(Tarefa item: tarefas) {
+			System.out.println(item);
+			System.out.println("--------------------------------------------");
+		}
+		System.out.println("Digite o id da tarefa que deseja alterar: ");
+		int x = teclado.nextInt();
+		Tarefa y = null;
 		
-		if(status.equals("S") || status.equals("s")) {
-			tarefa.setFinalizada(true);	
-		} else {
-			tarefa.setFinalizada(false);
+		try {
+			for(Tarefa tarefa: tarefas) {
+				if(tarefa.getId() == x) {
+					y = tarefa;
+					break;
+				}
+			}
+			
+			if(y == null) {
+				System.out.println("Id inexistente, digite um Id válido.");
+			}
+			
+		} catch (InputMismatchException e) {
+			System.out.println("Entrada invalida.");
 		}
 		
-		return tarefa;
+		
+		int z;
+		do {
+			System.out.println(y);
+			System.out.println("O que deseja alterar?");
+			System.out.println("1 - Descrição");
+			System.out.println("2 - Prazo");
+			System.out.println("3 - Status");
+			System.out.println("0 - Cancelar");
+			
+			z = teclado.nextInt();
+			if(z == 1) {
+				System.out.println("Nova Descrição: ");
+				String input = teclado2.nextLine();
+				y.setDescricao(input);
+			} else if (z == 2) {
+				System.out.println("Novo Prazo: ");
+				y.setPrazo(teclado.nextInt());
+			} else if(z == 3) {
+				System.out.println("Nova Finalizada (S/N): ");
+				String status = teclado.next();
+				
+				if(status.equals("S") || status.equals("s")) {
+					y.setFinalizada(true);	
+				} else {
+					y.setFinalizada(false);
+				}
+			} else if(z == 0) {
+				System.out.println("Alteração cancelada.");
+			} else {
+				System.out.println("Opção inválida.");
+			}
+		} while(z != 0);
+		return tarefas;
 	}
 	
 	public List<Tarefa> exibirExclusao(List<Tarefa> tarefas) {
@@ -76,10 +122,21 @@ public class Tela {
 		int x = teclado.nextInt();
 		Tarefa y = null;
 		
-		for(Tarefa tarefa: tarefas) {
-			if(tarefa.getId() == x) {
-				y = tarefa;
+		try {
+			for(Tarefa tarefa: tarefas) {
+				if(tarefa.getId() == x) {
+					y = tarefa;
+					break;
+				}
 			}
+			
+			if(y == null) {
+				System.out.println("Id inexistente, digite um Id válido.");
+			} else {
+				System.out.println("Tarefa excluida!");
+			}
+		} catch (InputMismatchException e) {
+			System.out.println("Entrada invalida.");
 		}
 		
 		tarefas.remove(y);

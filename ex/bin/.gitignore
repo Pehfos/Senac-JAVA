@@ -2,6 +2,9 @@
 /AppArray.class
 /AppLoop.class
 /AppTarefa.class
+/.classpath
+/.gitignore
+/.project
 /controller/
 /model/
 /view/

@@ -16,7 +16,7 @@ public class Controller {
 			tarefa = tela.exibirInclusao(gerarIndice(tarefas));
 			tarefas.add(tarefa);
 		} else if (opcao == 2) {
-			tela.exibirTarefa(tarefas);
+			tela.exibirTarefa(tarefas, "C O N S U L T A");
 		} else if (opcao == 3) {
 			tarefas = tela.exibirAlteracao(tarefas);
 		} else if (opcao == 4) {

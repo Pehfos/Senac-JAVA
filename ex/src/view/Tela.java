@@ -39,8 +39,8 @@ public class Tela {
 		return tarefa;
 	}
 	
-	public void exibirTarefa(List<Tarefa> tarefas) {
-		System.out.println("C O N S U L T A");
+	public void exibirTarefa(List<Tarefa> tarefas, String titulo) {
+		System.out.println(titulo);
 		
 		for(Tarefa item: tarefas) {
 			System.out.println(item);
@@ -52,25 +52,17 @@ public class Tela {
 		Scanner teclado = new Scanner(System.in);
 		Scanner teclado2 = new Scanner(System.in);
 
-		System.out.println("A L T E R A Ç Ã O");
-		for(Tarefa item: tarefas) {
-			System.out.println(item);
-			System.out.println("--------------------------------------------");
-		}
+		exibirTarefa(tarefas, "A L T E R A Ç Ã O");
 		System.out.println("Digite o id da tarefa que deseja alterar: ");
 		int x = teclado.nextInt();
 		Tarefa y = null;
 		
 		try {
-			for(Tarefa tarefa: tarefas) {
-				if(tarefa.getId() == x) {
-					y = tarefa;
-					break;
-				}
-			}
+			y = buscarTarefa(tarefas, x);
 			
 			if(y == null) {
 				System.out.println("Id inexistente, digite um Id válido.");
+				
 			}
 			
 		} catch (InputMismatchException e) {
@@ -115,20 +107,15 @@ public class Tela {
 	
 	public List<Tarefa> exibirExclusao(List<Tarefa> tarefas) {
 		Scanner teclado = new Scanner(System.in);
-		
-		exibirTarefa(tarefas);
+
+		exibirTarefa(tarefas, "E X C L U S Ã O");
 		
 		System.out.println("Digite o Id da tarefa que deseja excluir: ");
 		int x = teclado.nextInt();
 		Tarefa y = null;
 		
 		try {
-			for(Tarefa tarefa: tarefas) {
-				if(tarefa.getId() == x) {
-					y = tarefa;
-					break;
-				}
-			}
+			y = buscarTarefa(tarefas, x);
 			
 			if(y == null) {
 				System.out.println("Id inexistente, digite um Id válido.");
@@ -142,5 +129,17 @@ public class Tela {
 		tarefas.remove(y);
 
 		return tarefas;
+	}
+	
+	public Tarefa buscarTarefa(List<Tarefa> tarefas, int id) {
+		Tarefa y = null;
+		for(Tarefa tarefa: tarefas) {
+			if(tarefa.getId() == id) {
+				y = tarefa;
+				break;
+			}
+		}
+		
+		return y;
 	}
 }

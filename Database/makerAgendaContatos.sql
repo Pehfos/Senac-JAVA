@@ -11,8 +11,5 @@ CREATE TABLE contato(
     PRIMARY KEY(email)
 );
 
-DROP TABLE contato;
-
-TRUNCATE TABLE contato;
-
 SELECT * FROM contato
+

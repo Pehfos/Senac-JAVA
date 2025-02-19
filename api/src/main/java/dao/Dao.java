@@ -16,8 +16,8 @@ public class Dao {
 			Class.forName(driverName);
 			
 			String serverName = "localhost:3306";
-			String dataBase = "agenda_contatos";
-			String url = "jdbc.mysql://" + serverName + "/" + dataBase;
+			String dataBase = "registro_tarefas";
+			String url = "jdbc:mysql://" + serverName + "/" + dataBase;
 			String user = "root";
 			String password = "";
 			
@@ -39,4 +39,19 @@ public class Dao {
 		}
 		
 	}
+	
+	public static String getStatusConexao() {
+		return status;
+	}
+	
+	public static boolean fecharConexao() {
+		try {
+			Dao.getConexao().close();
+			return true;
+		} catch (SQLException e) {
+			return false;
+		}
+	}
+	
+	
 }

@@ -1,5 +1,5 @@
 Java:
-
+HOMEWORK: Create consult of the api.
 static //Lets you use the class without needing to instantiate it.
 
 --Conditionals
@@ -53,6 +53,9 @@ to start the server go to the Green Button at the right.
 --Driver is the class that bridges the backend language with the Database.
 	It is good to put it inside webapp, in a folder you can named as "lib", afterwards go to build path and select 
 add to build path.
+
+--PreparedStatement is an object that sends a command to SQL.
+ResultSet returns something from the SQL.
 
 --For numbers that you won't be doing math equations to, use Strings/varchar.
 

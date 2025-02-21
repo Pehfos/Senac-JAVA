@@ -1,5 +1,5 @@
 Java:
-HOMEWORK: Create consult of the api.
+HOMEWORK: Resolver error do descricao.
 static //Lets you use the class without needing to instantiate it.
 
 --Conditionals

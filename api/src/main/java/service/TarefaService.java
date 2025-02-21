@@ -9,4 +9,14 @@ public class TarefaService {
 		TarefaDAO dao = new TarefaDAO();
 		return dao.listar();
 	}
+	
+	public Tarefa consultarId(Integer id) {
+		TarefaDAO dao = new TarefaDAO();
+		return dao.consultarId(id);
+	}
+	
+	public List<Tarefa> consultarDescricao(String descricao) {
+		TarefaDAO dao = new TarefaDAO();
+		return dao.consultarDescricao(descricao);
+	}
 }

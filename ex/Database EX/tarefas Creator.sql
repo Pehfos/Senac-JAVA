@@ -10,6 +10,6 @@ CREATE TABLE tarefas(
     PRIMARY KEY(id)
 );
 
-SELECT * FROM tarefas;
+SELECT * FROM tarefas WHERE descricao LIKE 'D%';
 
 DROP TABLE tarefas;

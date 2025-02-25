@@ -78,14 +78,14 @@ public class TarefaDAO {
 		List<Tarefa> lista = new ArrayList<Tarefa>();
 		Tarefa tarefa = null;
 		
-		String SQL = "SELECT * FROM tarefas WHERE descricao LIKE '?%'";
+		String SQL = "SELECT * FROM tarefas WHERE descricao LIKE ?";
 		
 		
 		PreparedStatement ps;
 		
 		try {
 			ps = cnx.prepareStatement(SQL);
-			ps.setString(1, descricao);
+			ps.setString(1, descricao + "%");
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -96,6 +96,8 @@ public class TarefaDAO {
 				tarefa.setDescricao(rs.getString("descricao"));
 				tarefa.setPrazo(rs.getInt("prazo"));
 				tarefa.setFinalizada(rs.getBoolean("finalizada"));
+				
+				lista.add(tarefa);
 			}
 			
 		} catch (SQLException e) {

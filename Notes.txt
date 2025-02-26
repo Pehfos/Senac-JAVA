@@ -1,5 +1,7 @@
 Java:
 HOMEWORK: Make a print for the alteration and exclusion methods.
+# Create an application for a samba school.
+
 static //Lets you use the class without needing to instantiate it.
 
 --Conditionals

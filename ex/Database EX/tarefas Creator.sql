@@ -13,3 +13,5 @@ CREATE TABLE tarefas(
 SELECT * FROM tarefas WHERE descricao LIKE 'D%';
 
 DROP TABLE tarefas;
+
+DELETE FROM tarefas WHERE id = 1;

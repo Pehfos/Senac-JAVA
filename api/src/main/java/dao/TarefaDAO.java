@@ -11,6 +11,33 @@ import java.util.Scanner;
 import model.Tarefa;
 
 public class TarefaDAO {
+	public boolean incluir(Tarefa tarefa) {
+		boolean status = false;
+		Connection cnx = Dao.getConexao();
+		 
+		StringBuilder QUERY = new StringBuilder();
+		QUERY.append("INSERT INTO tarefas(descricao, prazo, finalizada) ");
+		QUERY.append("VALUES (?, ?, ?)");
+		
+		PreparedStatement ps;
+		
+		try {
+			ps = cnx.prepareStatement(QUERY.toString());
+			
+			ps.setString(1, tarefa.getDescricao());
+			ps.setInt(2, tarefa.getPrazo());
+			ps.setBoolean(3, tarefa.getFinalizada());
+			
+			int x = ps.executeUpdate();
+			
+			status = x > 0 ? true : false; //Other method of building an if function.
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return status;
+	}
+	
 	public List<Tarefa> listar(){
 		List<Tarefa> lista = new ArrayList<Tarefa>();
 		Tarefa tarefa = null;
@@ -37,6 +64,10 @@ public class TarefaDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+		
+		for(Tarefa t: lista) {
+			System.out.println(t);
 		}
 		
 		return lista;
@@ -104,6 +135,56 @@ public class TarefaDAO {
 			e.printStackTrace();
 		}
 		return lista;
+	}
+	
+	public boolean alterar(Tarefa tarefa) {
+		boolean status = false;
+		Connection cnx = Dao.getConexao();
+		 
+		StringBuilder QUERY = new StringBuilder();
+		QUERY.append("UPDATE SET tarefas descricao = ?, prazo = ?, finalizada = ? ");
+		QUERY.append("WHERE id = ?");
 		
+		PreparedStatement ps;
+		
+		try {
+			ps = cnx.prepareStatement(QUERY.toString());
+			
+			ps.setString(1, tarefa.getDescricao());
+			ps.setInt(2, tarefa.getPrazo());
+			ps.setBoolean(3, tarefa.getFinalizada());
+			ps.setInt(4, tarefa.getId());
+			
+			int x = ps.executeUpdate();
+			
+			status = x > 0 ? true : false; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return status;
+	}
+	
+	public boolean excluir(Tarefa tarefa) {
+		boolean status = false;
+		Connection cnx = Dao.getConexao();
+		 
+		String SQL = "DELETE FROM tarefas WHERE id = ?";
+		
+		PreparedStatement ps;
+		
+		try {
+			ps = cnx.prepareStatement(SQL);
+			
+			ps.setInt(1, tarefa.getId());
+			
+			int x = ps.executeUpdate();
+			
+			status = x > 0 ? true : false; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return status;
 	}
 }

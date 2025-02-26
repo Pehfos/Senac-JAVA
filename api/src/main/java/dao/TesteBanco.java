@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.Scanner;
 import model.Tarefa;
@@ -16,17 +17,16 @@ public class TesteBanco {
 		Connection conexao = Dao.getConexao();
 		System.out.println(Dao.getStatusConexao());
 		Dao.fecharConexao();
+		*/
+		List<Tarefa> lista =  service.listarTarefa();
 		
-		List<Tarefa> lista =  service.listar();
 		
-		for(Tarefa t: lista) {
-			System.out.println(t);
-		}
+		/*
 		System.out.println("-----------------------------------------------");
 		System.out.println("Digite o Id da Tarefa que deseja consultar: ");
 		int X = scanner.nextInt();
 		System.out.println(service.consultarId(X));
-		*/
+		
 		Scanner scanner2 = new Scanner(System.in);
 		System.out.println("-----------------------------------------------");
 		System.out.println("Digite a primeira letra da Descrição da Tarefa que deseja consultar: ");
@@ -35,6 +35,19 @@ public class TesteBanco {
 		for(Tarefa a: lista2) {
 			System.out.println(a);
 		}
+		*/
+		/*Tarefa tarefaIncluir = new Tarefa();
+		tarefaIncluir.setDescricao("Comer biscoito");
+		tarefaIncluir.setPrazo(5);
+		tarefaIncluir.setFinalizada(false);
+		
+		if(service.incluirTarefa(tarefaIncluir)) {
+			System.out.println("Registro incluido com sucesso");
+		} else {
+			System.out.println("Ocorreu algum erro");
+		}*/
+		
+		
 	}
 
 }

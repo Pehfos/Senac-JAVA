@@ -65,53 +65,6 @@ executeQuery // Executes a query on the database that returns a table or somethi
 executeUpdate // Executes a query that alters the registers. (example: INSERT)
 
 --For numbers that you won't be doing math equations to, use Strings/varchar.
-
-Deprecated code:
-	public List<Tarefa> alterar(List<Tarefa> tarefas){
-		Connection cnx = Dao.getConexao();
-		List<Tarefa> lista = new ArrayList<Tarefa>();
-		Tarefa tarefa = null;
-		
-		listar();
-		
-		String SQL = "UPDATE tarefas SET descricao = ? WHERE id = ?";
-		String SQL2 = "UPDATE tarefas SET prazo = ? WHERE id = ?";
-		String SQL3 = "UPDATE tarefas SET finalizada = ? WHERE id = ?";
-		
-		PreparedStatement ps;
-		PreparedStatement ps2;
-		PreparedStatement ps3;
-
-		System.out.println("Digite o Id da tarefa que deseja alterar: ");
-		
-		Scanner scanner = new Scanner(System.in);
-		int input = scanner.nextInt();
-		
-		
-		
-			
-		if(input == 1){
-			try {
-				ps = cnx.prepareStatement(SQL);
-				ps.setString(1, tarefa.getDescricao());
-				ps.setInt(2, tarefa.getId());
-				
-				ps2 = cnx.prepareStatement(SQL2);
-				ps2.setInt(1, tarefa.getPrazo());
-				ps2.setInt(2, tarefa.getId());
-				
-				ps3 = cnx.prepareStatement(SQL3);
-				ps3.setBoolean(1, tarefa.getFinalizada());
-				ps3.setInt(2, tarefa.getId());
-				
-				int X = ps.executeUpdate();
-				int Y = ps2.executeUpdate();
-				int Z = ps3.executeUpdate();
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
 ###############################################################################################################################
 Git commands:
 

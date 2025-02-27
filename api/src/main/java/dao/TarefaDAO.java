@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import model.Tarefa;
 
 public class TarefaDAO {
@@ -140,16 +139,37 @@ public class TarefaDAO {
 	public boolean alterar(Tarefa tarefa) {
 		boolean status = false;
 		Connection cnx = Dao.getConexao();
-		 
+		Scanner scanner = new Scanner(System.in);
+		Scanner scannerDes = new Scanner(System.in);
+		Scanner scannerPra = new Scanner(System.in);
+		Scanner scannerFin = new Scanner(System.in);
 		StringBuilder QUERY = new StringBuilder();
-		QUERY.append("UPDATE SET tarefas descricao = ?, prazo = ?, finalizada = ? ");
-		QUERY.append("WHERE id = ?");
+		
+		QUERY.append("UPDATE tarefas SET descricao = ?, prazo = ?, finalizada = ? WHERE id = ?");
 		
 		PreparedStatement ps;
 		
 		try {
-			ps = cnx.prepareStatement(QUERY.toString());
+			System.out.println("Digite o Id da tarefa que deseja alterar: ");
+			int input = scanner.nextInt();
+			System.out.println(consultarId(input));
 			
+			System.out.println("Digite a nova Descrição: ");
+			tarefa.setDescricao(scannerDes.nextLine());
+			
+			System.out.println("Digite o novo Prazo: ");
+			tarefa.setPrazo(scannerPra.nextInt());
+			
+			System.out.println("Digite o novo Status (S/N): ");
+			String inputFin  = scannerFin.next();
+				if(inputFin.equals("S") || inputFin.equals("s")){
+					tarefa.setFinalizada(true);
+				} else {
+					tarefa.setFinalizada(false);
+				}
+			
+			ps = cnx.prepareStatement(QUERY.toString());
+
 			ps.setString(1, tarefa.getDescricao());
 			ps.setInt(2, tarefa.getPrazo());
 			ps.setBoolean(3, tarefa.getFinalizada());
@@ -157,26 +177,34 @@ public class TarefaDAO {
 			
 			int x = ps.executeUpdate();
 			
-			status = x > 0 ? true : false; 
+			status = x > 0 ? true : false;
+			
+			System.out.println("Sua tarefa foi alterada!");
+			System.out.println(consultarId(input));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		return status;
 	}
 	
 	public boolean excluir(Tarefa tarefa) {
 		boolean status = false;
 		Connection cnx = Dao.getConexao();
+		Scanner scanner = new Scanner(System.in);
 		 
 		String SQL = "DELETE FROM tarefas WHERE id = ?";
 		
 		PreparedStatement ps;
 		
 		try {
+			System.out.println("Digite o Id da tarefa que deseja alterar: ");
+			int input = scanner.nextInt();
+			System.out.println(consultarId(input));
+			tarefa.setId(input);
+			
 			ps = cnx.prepareStatement(SQL);
 			
-			ps.setInt(1, tarefa.getId());
+			ps.setInt(1, input);
 			
 			int x = ps.executeUpdate();
 			
@@ -185,6 +213,7 @@ public class TarefaDAO {
 			e.printStackTrace();
 		}
 		
+		System.out.println("Tarefa excluída!");
 		return status;
 	}
 }

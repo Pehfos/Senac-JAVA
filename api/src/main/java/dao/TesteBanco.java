@@ -12,14 +12,15 @@ public class TesteBanco {
 		TarefaService service = new TarefaService();
 		TarefaDAO tarefaDAO = new TarefaDAO();
 		Scanner scanner = new Scanner(System.in);
+		Tarefa tarefa = new Tarefa();
 		/*
 		System.out.println(Dao.getStatusConexao());
 		Connection conexao = Dao.getConexao();
 		System.out.println(Dao.getStatusConexao());
 		Dao.fecharConexao();
-		*/
-		List<Tarefa> lista =  service.listarTarefa();
 		
+		List<Tarefa> lista =  service.listarTarefa();
+		*/
 		
 		/*
 		System.out.println("-----------------------------------------------");
@@ -46,6 +47,8 @@ public class TesteBanco {
 		} else {
 			System.out.println("Ocorreu algum erro");
 		}*/
+		
+		service.alterarTarefa(tarefa);
 		
 		
 	}

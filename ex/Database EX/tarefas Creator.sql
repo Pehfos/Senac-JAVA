@@ -12,6 +12,8 @@ CREATE TABLE tarefas(
 
 SELECT * FROM tarefas WHERE descricao LIKE 'D%';
 
+UPDATE tarefas SET descricao = 'Comprar pão', prazo = 5, finalizada = true WHERE id = 2;
+
 DROP TABLE tarefas;
 
 DELETE FROM tarefas WHERE id = 1;

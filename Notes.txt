@@ -12,7 +12,7 @@ else //Returns something if no conditions are met. Operator being <:>.
 --Instancing
 <Class> <vartype> = new <Class>() //Instantiates a private class.
 	The Constructor method creates an instance with values already put in: ...<Class>(<vartype> <varname).
-@override //Used to override a method from the Java object class.
+@override //Annotation used to override a method from the Java object class.
 	toString() //Overrides the toString() method to return a specified information when printing an object.
 
 --Loop 
@@ -43,7 +43,7 @@ F8 //Continues the program.
 --Java Layers:
 model //Represents the tables.
 view // Views the projects.
-controller //Controls the projects.
+controller //Manages classes that know what to do with input.
 dao //Data Access Object, for data.
 service //Manages data without letting the user do it directly.
 
@@ -64,7 +64,15 @@ ResultSet // Returns something from the SQL.
 executeQuery // Executes a query on the database that returns a table or something. (example: SELECT)
 executeUpdate // Executes a query that alters the registers. (example: INSERT)
 
+--Jersey
+One of the libraries used to configure the xml to prepare the endpoints for the web.
+
 --For numbers that you won't be doing math equations to, use Strings/varchar.
+###############################################################################################################################
+Json:
+
+[ ] //Everything inside of brackets represents an array.
+{ } //Everything inside of keys represents an object.
 ###############################################################################################################################
 Git commands:
 

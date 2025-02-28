@@ -12,6 +12,7 @@ public class TesteBanco {
 		TarefaService service = new TarefaService();
 		TarefaDAO tarefaDAO = new TarefaDAO();
 		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
 		Tarefa tarefa = new Tarefa();
 		/*
 		System.out.println(Dao.getStatusConexao());
@@ -48,9 +49,38 @@ public class TesteBanco {
 			System.out.println("Ocorreu algum erro");
 		}*/
 		
-		service.alterarTarefa(tarefa);
+		List<Tarefa> lista = service.listarTarefa();
+		System.out.println("Digite o Id da tarefa que deseja excluir: ");
+		int inputId = scanner.nextInt();
+		tarefa = service.consultarId(inputId);
 		
+		/*
+		System.out.println("Digite o que deseja alterar: ");
+		System.out.println("1 - Descrição, 2 - Prazo, 3 - Prazo");
+		int escolha = scanner2.nextInt();
 		
-	}
-
+		if(escolha == 1) {
+			Scanner descricao = new Scanner(System.in);
+			System.out.println("Digite a Descrição: ");
+			String valorDescricao = descricao.nextLine();
+			tarefa.setDescricao(valorDescricao);
+		} else if (escolha == 2) {
+			Scanner prazo = new Scanner(System.in);
+			System.out.println("Digite o Prazo: ");
+			int valorPrazo = prazo.nextInt();
+			tarefa.setPrazo(valorPrazo);
+		} else {
+			Scanner finalizada = new Scanner(System.in);
+			System.out.println("Digite o Status: ");
+			Boolean valorFinalizada = finalizada.nextBoolean();
+			tarefa.setFinalizada(valorFinalizada);
+		}
+		
+		if(service.alterarTarefa(tarefa)) {
+			System.out.println("Alterado com sucesso!");
+		} else {
+			System.out.println("Ocorreu um erro.");
+		}
+	*/}
+	
 }

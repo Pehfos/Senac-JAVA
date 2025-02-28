@@ -139,10 +139,6 @@ public class TarefaDAO {
 	public boolean alterar(Tarefa tarefa) {
 		boolean status = false;
 		Connection cnx = Dao.getConexao();
-		Scanner scanner = new Scanner(System.in);
-		Scanner scannerDes = new Scanner(System.in);
-		Scanner scannerPra = new Scanner(System.in);
-		Scanner scannerFin = new Scanner(System.in);
 		StringBuilder QUERY = new StringBuilder();
 		
 		QUERY.append("UPDATE tarefas SET descricao = ?, prazo = ?, finalizada = ? WHERE id = ?");
@@ -151,23 +147,6 @@ public class TarefaDAO {
 		
 		try {
 			System.out.println("Digite o Id da tarefa que deseja alterar: ");
-			int input = scanner.nextInt();
-			System.out.println(consultarId(input));
-			
-			System.out.println("Digite a nova Descrição: ");
-			tarefa.setDescricao(scannerDes.nextLine());
-			
-			System.out.println("Digite o novo Prazo: ");
-			tarefa.setPrazo(scannerPra.nextInt());
-			
-			System.out.println("Digite o novo Status (S/N): ");
-			String inputFin  = scannerFin.next();
-				if(inputFin.equals("S") || inputFin.equals("s")){
-					tarefa.setFinalizada(true);
-				} else {
-					tarefa.setFinalizada(false);
-				}
-			
 			ps = cnx.prepareStatement(QUERY.toString());
 
 			ps.setString(1, tarefa.getDescricao());
@@ -180,7 +159,6 @@ public class TarefaDAO {
 			status = x > 0 ? true : false;
 			
 			System.out.println("Sua tarefa foi alterada!");
-			System.out.println(consultarId(input));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -190,21 +168,16 @@ public class TarefaDAO {
 	public boolean excluir(Tarefa tarefa) {
 		boolean status = false;
 		Connection cnx = Dao.getConexao();
-		Scanner scanner = new Scanner(System.in);
 		 
 		String SQL = "DELETE FROM tarefas WHERE id = ?";
 		
 		PreparedStatement ps;
 		
 		try {
-			System.out.println("Digite o Id da tarefa que deseja alterar: ");
-			int input = scanner.nextInt();
-			System.out.println(consultarId(input));
-			tarefa.setId(input);
 			
 			ps = cnx.prepareStatement(SQL);
 			
-			ps.setInt(1, input);
+			ps.setInt(1, tarefa.getId());
 			
 			int x = ps.executeUpdate();
 			

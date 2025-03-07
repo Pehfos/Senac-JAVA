@@ -1,8 +1,12 @@
 Java:
-HOMEWORK: Make a print for the alteration and exclusion methods.
+HOMEWORK: 
 # Create an application for a samba school.
 
+--Class types
+void //Makes it so that class/method doesn't return anything.
 static //Lets you use the class without needing to instantiate it.
+Response //Represents the answer of what your web server understands.
+
 
 --Conditionals
 if //Sets the condition for something. Operator being <?>.
@@ -12,7 +16,7 @@ else //Returns something if no conditions are met. Operator being <:>.
 --Instancing
 <Class> <vartype> = new <Class>() //Instantiates a private class.
 	The Constructor method creates an instance with values already put in: ...<Class>(<vartype> <varname).
-@override //Annotation used to override a method from the Java object class.
+@override //Annotation used to configure a method from the Java object class.
 	toString() //Overrides the toString() method to return a specified information when printing an object.
 
 --Loop 
@@ -64,10 +68,25 @@ ResultSet // Returns something from the SQL.
 executeQuery // Executes a query on the database that returns a table or something. (example: SELECT)
 executeUpdate // Executes a query that alters the registers. (example: INSERT)
 
+
 --Jersey
 One of the libraries used to configure the xml to prepare the endpoints for the web.
 
 --For numbers that you won't be doing math equations to, use Strings/varchar.
+
+--Html verbs for Java
+(If your class only has one verb, you do not need to specify its @Path, not applied to @GET)
+@GET //Performs a consultion.
+@POST //Adds something.
+@PATCH //Alters something.
+@DELETE //Deletes something.
+
+@Produces //Type of media that is sent to the url.
+@Consumes //Type of media that is received by the url.
+@Path //Followed by ("<name>") to indicate the path of your code.
+@PathParam //Used whenever you need to pass a parameter through the url.
+	EX:@Path("<name>"/{<varname>})
+		public Response <methodName>(@PathParam("<varname>" <vartype> <varname>)
 ###############################################################################################################################
 Json:
 
